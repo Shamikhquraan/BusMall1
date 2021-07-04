@@ -5,7 +5,7 @@ let leftImgEl = document.getElementById('leftImg');
 let rightImgEl = document.getElementById('rightImg');
 let midImgEl = document.getElementById('midImg');
 let ulEl = document.getElementById('results');
-let goats = [];//0-7
+let goats = [];
 let attempts = 1;
 let maxAttempts = 25;
 
@@ -19,16 +19,18 @@ function GoatImage(goatName) {
 
 let goatsImages = ['bag.jpg', 'banana.jpg', 'bathroom.jpg', 'boots.jpg', 'breakfast.jpg', 'bubblegum.jpg',
 'chair.jpg', 'cthulhu.jpg','dog-duck.jpg','dragon.jpg','pen.jpg','pet-sweep.jpg','scissors.jpg','shark.jpg',
-'sweep.png','tauntaun.jpg','unicorn.jpg','water-can.jpg','wine-glass.jpg'];
+'sweep.png','tauntaun.jpg','unicorn.jpg','water-can.jpg','wine-glass.jpg' , 'bag.jpg', 'banana.jpg', 'bathroom.jpg'
+,'boots.jpg', 'breakfast.jpg', 'bubblegum.jpg',];
 
 for (let i = 0; i < goatsImages.length; i++) {
     new GoatImage(goatsImages[i]);
 }
-console.log(goats);
+
+
 
 function randomIndex() {
-    // Math.random();//0-1
-    //0-1 >>> 0.5 0.6 0.001
+    
+
     return Math.floor(Math.random() * goats.length);
 }
 let leftIndex;
@@ -41,7 +43,7 @@ function renderRandomImg() {
     midIndex = randomIndex();
     while (leftIndex === rightIndex || rightIndex === midIndex || leftIndex === midIndex ) {
         leftIndex = randomIndex();
-        midIndex=leftIndex();
+        midIndex=randomIndex();
     }
 
     leftImgEl.setAttribute('src', goats[leftIndex].img);
@@ -60,16 +62,11 @@ function renderRandomImg() {
 
 
 }
-// console.log(goats);
+
+
 renderRandomImg();
-// let goat1 = new GoatImage('cruisin-goat.jpg');
-// let goat2 = new GoatImage('float-your-goat.jpg');
-// let goat3 = new GoatImage('goat-away.jpg');
-// let goat4 = new GoatImage('goat-out-of-hand.jpg');
-// let goat5 = new GoatImage('kissing-goat.jpg');
-// let goat6 = new GoatImage('sassy-goat.jpg');
-// let goat7 = new GoatImage('smiling-goat.jpg');
-// let goat8 = new GoatImage('sweater-goat.jpg');
+
+
 
 leftImgEl.addEventListener('click', handelClicks);
 rightImgEl.addEventListener('click', handelClicks);
@@ -87,9 +84,9 @@ function handelClicks(event) {
         }else if(clickedImg === 'midImg'){
         goats[midIndex].votes++;
         }
+        
         renderRandomImg();
-      // console.log(clickedImg);
-        console.log(goats);
+      
     } 
     else {
         let ulEl = document.getElementById('results');
