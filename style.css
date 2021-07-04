@@ -1,0 +1,22 @@
+body{
+    color: aliceblue;
+
+    background-color: rgb(155, 4, 34);
+}
+
+p{
+    font-size: 23px;
+    font-family: 'EB Garamond', serif;
+color:aliceblue;
+
+}
+h1{
+
+    color: black;
+}
+#sham1{
+
+    width: 150px;
+    height: 90px;
+    font-size: 15px;
+}
