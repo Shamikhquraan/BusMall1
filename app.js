@@ -17,13 +17,13 @@ function GoatImage(goatName) {
     goats.push(this);
 }
 
-let goatsImages = ['bag.jpg', 'banana.jpg', 'bathroom.jpg', 'boots.jpg', 'breakfast.jpg', 'bubblegum.jpg',
+let prodImages = ['bag.jpg', 'banana.jpg', 'bathroom.jpg', 'boots.jpg', 'breakfast.jpg', 'bubblegum.jpg',
 'chair.jpg', 'cthulhu.jpg','dog-duck.jpg','dragon.jpg','pen.jpg','pet-sweep.jpg','scissors.jpg','shark.jpg',
 'sweep.png','tauntaun.jpg','unicorn.jpg','water-can.jpg','wine-glass.jpg' , 'bag.jpg', 'banana.jpg', 'bathroom.jpg'
 ,'boots.jpg', 'breakfast.jpg', 'bubblegum.jpg',];
 
-for (let i = 0; i < goatsImages.length; i++) {
-    new GoatImage(goatsImages[i]);
+for (let i = 0; i < prodImages.length; i++) {
+    new GoatImage(prodImages[i]);
 }
 
 
