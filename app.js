@@ -93,16 +93,28 @@ function handelClicks(event) {
       
     } 
     else {
-        let ulEl = document.getElementById('results');
-        for (let i = 0; i < goats.length; i++) {
-            let liEl = document.createElement('li');
-            liEl.textContent = `${goats[i].gName} has ${goats[i].votes} votes and ${goats[i].views} views .`
-            ulEl.appendChild(liEl);
-        }
-        leftImgEl.removeEventListener('click', handelClicks);
-        rightImgEl.removeEventListener('click', handelClicks);
-        midImgEl.removeEventListener('click', handelClicks);
-
+        renderClicks();
     }
     attempts++;
 }
+
+function renderClicks () {
+    let ulEl = document.getElementById('results');
+    for (let i = 0; i < goats.length; i++) {
+        let liEl = document.createElement('li');
+        liEl.textContent = `${goats[i].gName} has ${goats[i].votes} votes and ${goats[i].views} views .`
+        ulEl.appendChild(liEl);}
+          
+    leftImgEl.removeEventListener('click', handelClicks);
+    rightImgEl.removeEventListener('click', handelClicks);
+    midImgEl.removeEventListener('click', handelClicks);
+    };
+
+    let myform = document.getElementById('myForm');
+myForm.addEventListener('submit', addResult);
+function addResult(event) {
+    event.preventDefault();
+
+    renderClicks();
+
+};
