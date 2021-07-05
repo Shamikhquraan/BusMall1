@@ -62,12 +62,12 @@ while(itrIndx[0]== leftIndex||
     midIndex=randomIndex();
    rightIndex=randomIndex();
 
-   };
-  
-  
-itrIndx[0]= leftIndex;
-itrIndx[1]= midIndex;
-itrIndx[2]= rightIndex;
+   }
+   
+   itrIndx[0]= leftIndex;
+   itrIndx[1]= midIndex;
+   itrIndx[2]= rightIndex; 
+
 
     leftImgEl.setAttribute('src', goats[leftIndex].img);
     rightImgEl.setAttribute('src', goats[rightIndex].img);
@@ -148,6 +148,8 @@ function addResult(event) {
     chartResult();
 
 };
+
+
 
 function chartResult(){
 let ctx = document.getElementById('myChart').getContext('2d');
