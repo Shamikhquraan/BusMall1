@@ -20,7 +20,7 @@ function GoatImage(goatName) {
 let prodImages = ['bag.jpg', 'banana.jpg', 'bathroom.jpg', 'boots.jpg', 'breakfast.jpg', 'bubblegum.jpg',
 'chair.jpg', 'cthulhu.jpg','dog-duck.jpg','dragon.jpg','pen.jpg','pet-sweep.jpg','scissors.jpg','shark.jpg',
 'sweep.png','tauntaun.jpg','unicorn.jpg','water-can.jpg','wine-glass.jpg' , 'bag.jpg', 'banana.jpg', 'bathroom.jpg'
-,'boots.jpg', 'breakfast.jpg', 'bubblegum.jpg',];
+,'boots.jpg', 'breakfast.jpg', 'bubblegum.jpg'];
 
 for (let i = 0; i < prodImages.length; i++) {
     new GoatImage(prodImages[i]);
@@ -41,11 +41,15 @@ function renderRandomImg() {
     leftIndex = randomIndex();
     rightIndex = randomIndex();
     midIndex = randomIndex();
-    while (leftIndex === rightIndex || rightIndex === midIndex || leftIndex === midIndex ) {
+    while (leftIndex == rightIndex || rightIndex == midIndex || leftIndex == midIndex|| Math.abs(leftIndex-rightIndex)>=18 || Math.abs(leftIndex-midIndex)>=18){
+     
         leftIndex = randomIndex();
-        midIndex=randomIndex();
+        
+        
+        
         rightIndex=randomIndex();
-    }
+
+    };
 
     leftImgEl.setAttribute('src', goats[leftIndex].img);
     rightImgEl.setAttribute('src', goats[rightIndex].img);
