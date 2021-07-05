@@ -21,3 +21,16 @@ h1{
     font-size: 15px;
     flex: auto;
 }
+
+#myForm{
+
+width: 200px;
+
+}
+
+#submit{
+
+    width: 70px;
+    height: 30px;
+    font-size: 100%;
+}
