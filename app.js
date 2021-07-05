@@ -44,6 +44,7 @@ function renderRandomImg() {
     while (leftIndex === rightIndex || rightIndex === midIndex || leftIndex === midIndex ) {
         leftIndex = randomIndex();
         midIndex=randomIndex();
+        rightIndex=randomIndex();
     }
 
     leftImgEl.setAttribute('src', goats[leftIndex].img);
