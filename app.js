@@ -9,7 +9,6 @@ let views = [];
 let votes = [];
 let goats = [];
 let namesChart =[];
-let itrIndx=[0,0,0];
 let attempts = 1;
 let maxAttempts = 25;
 
@@ -34,7 +33,7 @@ for (let i = 0; i < prodImages.length; i++) {
 
 
 function randomIndex() {
-    
+
 
     return Math.floor(Math.random() * goats.length);
 }
@@ -47,26 +46,21 @@ function renderRandomImg() {
     rightIndex = randomIndex();
     midIndex = randomIndex();
     
-while(itrIndx[0]== leftIndex||
-   itrIndx[1]== leftIndex||
-   itrIndx[2]== leftIndex||
-   itrIndx[0]== midIndex ||
-   itrIndx[1]== midIndex ||
-   itrIndx[2]== midIndex ||
-   itrIndx[0]== rightIndex ||
-   itrIndx[1]== rightIndex ||
-   itrIndx[2]== rightIndex ){
+    let itrIndx=[];
 
 
+    while (leftIndex === rightIndex || rightIndex === midIndex || leftIndex ===midIndex || itrIndx.includes(leftIndex) || itrIndx.includes(rightIndex) || itrIndx.includes(midIndex)) {
+     
    leftIndex=randomIndex();
     midIndex=randomIndex();
    rightIndex=randomIndex();
+    
+}
 
-   }
-   
-   itrIndx[0]= leftIndex;
-   itrIndx[1]= midIndex;
-   itrIndx[2]= rightIndex; 
+
+itrIndx.push(leftIndex);
+itrIndx.push(rightIndex);
+itrIndx.push(midIndex);
 
 
     leftImgEl.setAttribute('src', goats[leftIndex].img);
@@ -109,17 +103,18 @@ function handelClicks(event) {
         }
         
         renderRandomImg();
+
       
     } 
     else {
         renderClicks();
+        chartResult();
+
     }
     attempts++;
 }
   
-itrIndx[0]= leftIndex;
-itrIndx[1]= midIndex;
-itrIndx[2]= rightIndex;
+
 
 
 function renderClicks () {
