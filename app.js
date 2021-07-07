@@ -1,16 +1,41 @@
 'use strict';
+
+
 let attemptsEl = document.getElementById('attempts');
 let containerEl = document.getElementById('container');
 let leftImgEl = document.getElementById('leftImg');
 let rightImgEl = document.getElementById('rightImg');
 let midImgEl = document.getElementById('midImg');
 let ulEl = document.getElementById('results');
+let prouDetails = [];
 let views = [];
 let votes = [];
 let goats = [];
 let namesChart =[];
 let attempts = 1;
 let maxAttempts = 25;
+
+
+
+
+function saveTolocalStorage() {
+    let data = JSON.stringify(goats);
+    localStorage.setItem('produ', data);
+}
+
+
+function  readFromlocalStorage() {
+    let stringObj = localStorage.getItem('produ');
+    let normalObj = JSON.parse(stringObj);
+
+    if (normalObj !== null) {
+        goats = normalObj;
+    }
+
+}
+readFromlocalStorage();
+
+
 
 
 function GoatImage(goatName) {
@@ -21,6 +46,7 @@ function GoatImage(goatName) {
     namesChart.push(goatName.split('.')[0]);
     goats.push(this);
 }
+
 
 let prodImages = ['bag.jpg', 'banana.jpg', 'bathroom.jpg', 'boots.jpg', 'breakfast.jpg', 'bubblegum.jpg',
 'chair.jpg', 'cthulhu.jpg','dog-duck.jpg','dragon.jpg','pen.jpg','pet-sweep.jpg','scissors.jpg','shark.jpg',
@@ -112,6 +138,8 @@ function handelClicks(event) {
 
     }
     attempts++;
+    saveTolocalStorage();
+
 }
   
 
@@ -141,9 +169,8 @@ function addResult(event) {
 
     renderClicks();
     chartResult();
-
-
-}
+ 
+};
 
 
 
@@ -190,4 +217,19 @@ let myChart = new Chart(ctx, {
     }
 });}
 
-console.log(views,votes);
+function saveTolocalStorage() {
+    let data = JSON.stringify(goats);
+    localStorage.setItem('goats', data);
+}
+
+
+function  readFromlocalStorage() {
+    let stringObj = localStorage.getItem('goats');
+    let normalObj = JSON.parse(stringObj);
+
+    if (normalObj !== null) {
+        goats = normalObj;
+    }
+
+}
+readFromlocalStorage();
