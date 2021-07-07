@@ -16,28 +16,6 @@ let attempts = 1;
 let maxAttempts = 25;
 
 
-
-
-function saveTolocalStorage() {
-    let data = JSON.stringify(goats);
-    localStorage.setItem('produ', data);
-}
-
-
-function  readFromlocalStorage() {
-    let stringObj = localStorage.getItem('produ');
-    let normalObj = JSON.parse(stringObj);
-
-    if (normalObj !== null) {
-        goats = normalObj;
-    }
-
-}
-readFromlocalStorage();
-
-
-
-
 function GoatImage(goatName) {
     this.gName = goatName.split('.')[0];
     this.img = 'images/' + goatName;
@@ -173,6 +151,23 @@ function addResult(event) {
 };
 
 
+function saveTolocalStorage() {
+    let data = JSON.stringify(goats);
+    localStorage.setItem('goats', data);
+}
+
+
+function  readFromlocalStorage() {
+    let stringObj = localStorage.getItem('goats');
+    let normalObj = JSON.parse(stringObj);
+
+    if (normalObj !== null) {
+        goats = normalObj;
+    }
+
+}
+readFromlocalStorage();
+
 
 function chartResult(){
 let ctx = document.getElementById('myChart').getContext('2d');
@@ -217,19 +212,3 @@ let myChart = new Chart(ctx, {
     }
 });}
 
-function saveTolocalStorage() {
-    let data = JSON.stringify(goats);
-    localStorage.setItem('goats', data);
-}
-
-
-function  readFromlocalStorage() {
-    let stringObj = localStorage.getItem('goats');
-    let normalObj = JSON.parse(stringObj);
-
-    if (normalObj !== null) {
-        goats = normalObj;
-    }
-
-}
-readFromlocalStorage();
