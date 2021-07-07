@@ -13,10 +13,41 @@ color:aliceblue;
 h1{
 
     color: black;
+};
+
+
+#leg1{
+
+    width: 200px;
+    height: 120px;   
+
+};
+
+#myForm{
+
+width: 200px;
+height: 120px;
+flex: auto;
+
 }
-#sham1{
+
+#submit{
 
     width: 150px;
-    height: 90px;
-    font-size: 15px;
+    height: 60px;
+    font-size: 100%;
+}
+
+
+footer{
+
+
+    width: 900px;
+    height: 350px;
+}
+#mychart{
+
+
+    font-size: 40%;
+    color: black;
 }

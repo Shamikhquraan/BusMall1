@@ -20,7 +20,8 @@
 
      <main>
 
-       <p>Welcome to our page, you can vote for your favorite product 25 times:</p>
+       <p>Welcome to our page, you can vote for your favorite product 25 times:</br>
+           The result it shown after 25 times , (or at the "add" button under the images.) </p>
         
        
        <br />
@@ -37,7 +38,26 @@
         <ul id="results"></ul>
 <br />
 <br />
-<button >click on the pic ... left ,mid ,right</button>
+
+<form  action="" id="myForm">
+  <fieldset>
+    <legend id="leg1">Add result and the chart by this button: </legend>
+
+<label  for="submit">Result , Chart :</label>
+<br />
+
+
+<input id="submit"  type="submit" value="add "  />
+
+
+
+</fieldset>
+</form>
+
+
+
+
+
 
      </main>
 
@@ -45,7 +65,9 @@
 
 
 
+      <canvas id="myChart" width="100px" height="100px"></canvas>
 
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
      </footer>
      <script src="app.js"></script>
