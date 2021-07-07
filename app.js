@@ -139,10 +139,11 @@ myForm.addEventListener('submit', addResult);
 function addResult(event) {
     event.preventDefault();
 
-    chartResult();
     renderClicks();
+    chartResult();
 
-};
+
+}
 
 
 
