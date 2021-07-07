@@ -104,10 +104,10 @@ function handelClicks(event) {
         
         renderRandomImg();
 
-      
     } 
     else {
         renderClicks();
+
         chartResult();
 
     }
@@ -139,8 +139,8 @@ myForm.addEventListener('submit', addResult);
 function addResult(event) {
     event.preventDefault();
 
-    renderClicks();
     chartResult();
+    renderClicks();
 
 };
 
