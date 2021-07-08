@@ -111,9 +111,9 @@ function handelClicks(event) {
     } 
     else {
         renderClicks();
-
         chartResult();
 
+        
     }
     attempts++;
     saveTolocalStorage();
@@ -134,10 +134,12 @@ function renderClicks () {
 
     
     }
-          
+   
+
     leftImgEl.removeEventListener('click', handelClicks);
     rightImgEl.removeEventListener('click', handelClicks);
     midImgEl.removeEventListener('click', handelClicks);
+
     };
 
     let myform = document.getElementById('myForm');
@@ -147,7 +149,7 @@ function addResult(event) {
 
     renderClicks();
     chartResult();
- 
+
 };
 
 

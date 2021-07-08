@@ -1,7 +1,9 @@
 body{
+    
     color: aliceblue;
 
     background-color: rgb(155, 4, 34);
+    background-image: url(https://img.wallpapersafari.com/desktop/1280/1024/26/4/TX8seO.jpg);
 }
 
 p{
@@ -13,6 +15,11 @@ color:aliceblue;
 h1{
 
     color: black;
+    text-align: center; 
+    background-color: gray;
+    display: flex; 
+    justify-content: center;
+
 };
 
 
@@ -35,7 +42,7 @@ flex: auto;
 
     width: 150px;
     height: 60px;
-    font-size: 100%;
+    font-size: 150%;
 }
 
 
