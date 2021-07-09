@@ -139,6 +139,7 @@ function renderClicks () {
     leftImgEl.removeEventListener('click', handelClicks);
     rightImgEl.removeEventListener('click', handelClicks);
     midImgEl.removeEventListener('click', handelClicks);
+    myform.removeEventListener('submit', addResult);
 
     };
 
@@ -149,9 +150,9 @@ function addResult(event) {
 
     renderClicks();
     chartResult();
+    myform.removeEventListener('submit', addResult);
 
 };
-
 
 function saveTolocalStorage() {
     let data = JSON.stringify(goats);
